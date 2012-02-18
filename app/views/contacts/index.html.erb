@@ -1,0 +1,28 @@
+<h1>Contacts</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contacts.each do |contact| %>
+  <tr>
+    <td><%= contact.first_name %></td>
+    <td><%= contact.last_name %></td>
+    <td><%= contact.email %></td>
+    <td><%= link_to 'Show', [@user, contact] %></td>
+    <td><%= link_to 'Edit', edit_user_contact_path(@user, contact) %></td>
+    <td><%= link_to 'Destroy', [@user, contact], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contact', new_user_contact_path(@user) %>

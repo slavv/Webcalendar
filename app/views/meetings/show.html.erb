@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Starts at:</b>
+  <%= @meeting.date_time.to_formatted_s(:long_ordinal) %>
+</p>
+
+<p>
+  <b>Place:</b>
+  <%= @meeting.place %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @meeting.category.name if @meeting.category%>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @meeting.notes %>
+</p>
+
+<p>
+  <b>Participants: </b>
+  <ul>
+    <% @meeting.contacts.each do |contact| %>
+      <li><%= contact.first_name + " " + contact.last_name %> </li>
+    <% end %>
+  </ul>
+</p>
+
+<%= link_to 'Edit', edit_user_meeting_path(@user, @meeting) %> |
+<%= link_to 'Back', user_meetings_path(@user) %>

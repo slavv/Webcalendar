@@ -1,0 +1,31 @@
+<%= form_for [@user, @meeting] do |f| %>
+  <%= errors_on @meeting %>
+
+  <div class="field">
+    <%= f.label :date_time %><br />
+    <%= f.datetime_select :date_time %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br />
+    <%= f.text_field :place %>
+  </div>
+  <div>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => "None"} %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes, rows:5 %>
+  </div>
+  <div>
+  <label for="contacts">Contacts:</label>
+    <% for contact in @user.contacts do %>
+      <br /><%= check_box_tag 'meeting[contact_ids][]', contact.id,
+              @meeting.contacts.include?(contact) %>
+      <%= contact.first_name + " " + contact.last_name %>
+    <% end %><br />
+    <%= hidden_field_tag 'meeting[contact_ids][]', '' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

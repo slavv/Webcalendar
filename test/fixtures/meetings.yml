@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  category_id: 1
+  date_time: 2012-02-17 10:00:36
+  place: MyString
+  notes: MyString
+
+two:
+  user_id: 1
+  category_id: 1
+  date_time: 2012-02-17 10:00:36
+  place: MyString
+  notes: MyString

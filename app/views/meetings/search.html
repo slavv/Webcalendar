@@ -1,0 +1,9 @@
+<h1>Search meetings</h1>
+<%= form_tag search_user_meetings_path(@user), :method => 'get' do %>
+  <p>
+    <%= text_field_tag :contact_name, params[:contact_name] %></td>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
+
+<%= render 'list' %>

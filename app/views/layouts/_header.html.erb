@@ -1,0 +1,12 @@
+<header>
+  <h2>Webcalendar</h2>
+  <% if signed_in? %>
+    <nav class="application_nav">
+      <%= link_to "Home", today_user_meetings_path(current_user) %> |
+      <%= link_to "Contacts", user_contacts_path(current_user) %> |
+      <%= link_to "Search", search_user_meetings_path(current_user) %> |
+      <%= link_to "Categories", categories_path %>
+      <%= link_to "Sign out", signout_path, method: :delete, class: "sign_controls" %>
+    </nav>
+  <% end %>
+</header>

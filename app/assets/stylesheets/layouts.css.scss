@@ -1,0 +1,59 @@
+body {
+  background-color: #1D7373;
+  margin: 0;
+  padding:0;
+}
+
+section {
+  width: 710px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  a {
+    color: #09c;
+  }
+
+  a:hover {
+    color: #069;
+  }
+
+  a:visited {
+    color: #069;
+  }
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  width: 710px;
+  margin: 0 auto;
+  background-color: #006363;
+  padding: 7px 20px;
+  color: white;
+  line-height: 50px;
+
+  h2 {
+    padding: 0;
+    display: inline;
+  }
+
+  nav {
+    display: inline; 
+    white-space: nowrap;
+    margin: 0 10px;
+    a {
+      color: white;
+      margin: 0 5px;
+    }
+    a.sign_controls {
+      float: right;
+    }
+  }
+}
